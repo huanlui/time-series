@@ -228,3 +228,11 @@ Donde 0≤𝛼≤1 es el parámetro de suavizado.
 Lo que hace es aplicar el exponential smoothing de las tres componentes T, E e I. 
 
 El método de Holt-Winters comprende la ecuación de pronóstico y tres ecuaciones de suavizado (similar a exponencial smoothing): una para el nivel, otra para la tendencia y otra para el componente estacional, con los correspondientes parámetros de suavizado. Usamos 𝑚 para denotar la frecuencia de la estacionalidad, es decir, el número de estaciones en un año. Por ejemplo, para datos trimestrales 𝑚=4, para datos mensuales 𝑚=12.
+
+### Aditivo
+
+![aditivo](wintersAditivo.PNG)
+
+### Multiplicativo
+
+![aditivo](wintersMultiplicativo.PNG)
