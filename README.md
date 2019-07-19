@@ -177,3 +177,21 @@ Los residuos son la diferencia entre valor estimado y valor real. Los residuos d
 ### Predicción.
 
 Una vez seleccionado el mejor modelo candidato se pueden hacer pronósticos en términos probabilísticos de los valores futuros. 
+
+### Existe en R una función auto-arima que te lo hace
+
+* Se ajustan cuatro modelos iniciales:
+𝐴𝑅𝐼𝑀𝐴(0,𝑑,0),
+𝐴𝑅𝐼𝑀𝐴(2,𝑑,2),
+𝐴𝑅𝐼𝑀𝐴(1,𝑑,0),
+𝐴𝑅𝐼𝑀𝐴(0,𝑑,1).
+* El mejor modelo (aquel con el AIC más pequeño) es seleccionado. Le llamaremos “modelo actual”.
+* Se hacen variaciones sobre el modelo actual:
+Variar 𝑝 y/o 𝑞 con valores ±1
+
+Incluye o no la constante de 𝐴𝑅 en el modelo.
+
+El mejor modelo considerado hasta ahora (ya sea el modelo actual o una de estas variaciones) se convierte en el nuevo modelo actual.
+
+* Se repite el paso 2 (c) hasta que no se pueda encontrar un AIC inferior.
+
