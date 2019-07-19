@@ -231,8 +231,8 @@ El método de Holt-Winters comprende la ecuación de pronóstico y tres ecuacion
 
 ### Aditivo
 
-![aditivo](wintersAditivo.PNG)
+![aditivo](media/wintersAditivo.PNG)
 
 ### Multiplicativo
 
-![aditivo](wintersMultiplicativo.PNG)
+![aditivo](media/wintersMultiplicativo.PNG)
