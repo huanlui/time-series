@@ -147,3 +147,9 @@ También funciona para no estacionarias.
 
 Los modelos de series de tiempo analizados hasta ahora se basan en el supuesto de estacionariedad, esto es, la media y la varianza para una serie de tiempo son constantes en el tiempo y la covarianza es invariante en el tiempo. Pero la mayoría de las series de tiempo no son estacionarias, porque pueden ir cambiando de nivel en el tiempo o sencillamente la varianza no es constante en el tiempo, a este tipo de proceso se les considera *procesos integrados*.
 
+Por consiguiente, se debe diferenciar una serie de tiempo d veces para hacerla estacionaria y luego aplicarla a esta serie diferenciada un modelo ARMA(p,q), se dice que la serie original es ARIMA(p,d,q), es decir, una serie de tiempo autoregresiva integrada de media móvil. Donde p denota el número de términos autoregresivos, d el número de veces que la serie debe ser diferenciada para hacerla estacionaria y q el número de términos de la media móvil.
+
+𝑋_𝑡=〖𝜙_0+𝜙_1 𝑋_(𝑡−1)^𝑑+⋯+𝜙_𝑝 𝑋_(𝑡−𝑝)^𝑑+𝜃〗_0+
+
+𝜃_1 𝜀_(𝑡−1)^𝑑+⋯+𝜃_𝑞 𝜀_(𝑡−𝑞)^𝑑+𝜀_𝑡
+
