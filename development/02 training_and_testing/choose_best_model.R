@@ -46,6 +46,8 @@ acf(y)
 acf(log(y))
 #tampoco es esdtacionaria haciendo esa transformación. 
 
+# Arima intentaba hacer diferencias y aplicar un ARMA. 
+# Vemos que para i = 2 tiene mejor pinta. 
 par(mfrow=c(3,1))
 for(i in 1:3){
   acf(diff(log(y),differences = i),main=paste0("ACF para la serie de diferencias con i=",i ))
@@ -65,50 +67,54 @@ for(i in 1:3){
 
 #Vamos a realizar una "validacion cruzada" que para series de tiempo
 #se llama "Rolling forecasting origin"
+# ver https://github.com/huanlui/time-series/blob/master/README.md#cross-validation-en-series-de-tiempo
 
 y<-ts(data_price$price_spain,frequency = 24) #Serie hist?rica de precios
 
 errordf<-data.frame(err1=0,err2=0,err3=0,err4=0,err5=0,err6=0,err7=0) #Inicializaci?n de los 
-npred<-24
+npred<-24 # vamos a estimar 24 muestras futuras. (# h is the no. periods to forecast)
 
 print(paste0(Sys.time(),": Inicio"))
 for(i in 1:20){
   print(i)
-  train<-window(y,end=c(end(y)[1]-(20-i+1),24))
+  train<-window(y,end=c(end(y)[1]-(20-i+1),24)) 
   test<-window(y,start=c(end(y)[1]-(20-i),1),end=c(end(y)[1]-(20-i),24))
   
   
   print("model 1")
   fit1<-tslm(train ~ trend + season) #Modelo de regresion lineal
-  fcast1 <- forecast(fit1,h=npred ,level = 0)
+  fcast1 <- forecast::forecast(fit1,h=npred ,level = 0) # level0 para que no me de intervalo de confianza
   
   print("model 2")
   fit2<-ets(train,ic="aic") #Modelo de exponencial smoothing sin transformaci?n de Box-Cox
-  fcast2 <- forecast(fit2,h=npred ,level = 0)
+  fcast2 <- forecast::forecast(fit2,h=npred ,level = 0)
   
   print("model 3")
   fit3<-HoltWinters(train) #Modelo de clasico de Holtwinter (similar exponencial smoothing) aditivo
-  fcast3 <-forecast(fit3,h=npred ,level = 0)
+  fcast3 <-forecast::forecast(fit3,h=npred ,level = 0)
   
   print("model 4")
   fit4<-HoltWinters(train,seasonal = "mult") #Modelo de clasico de Holtwinter multiplicativo
-  fcast4 <-forecast(fit4,h=npred ,level = 0)
+  fcast4 <-forecast::forecast(fit4,h=npred ,level = 0)
   
   print("model 5")
   fit5 <- tbats(train) #Modelo TBATS, suele usarse cuando hay multiples patrones ciclicos, podria detectar algunos patrones dificiles en nuestra serie
-  fcast5 <- forecast(fit5, h=npred ,level = 0)
+  fcast5 <- forecast::forecast(fit5, h=npred ,level = 0)
   
   print("model 6")
   lam <- BoxCox.lambda(train)
   fit6 <- ets(train, additive=TRUE, lambda=lam) #Modelo exponencial smoothing con transformacion de Box.Cox
-  fcast6 <-forecast(fit6,h=npred,level = 0)
+  fcast6 <-forecast::forecast(fit6,h=npred,level = 0)
   
   print("model 7")
   fit7 <- auto.arima(train) #ARIMA
-  fcast7 <-forecast(fit7,h=npred,level = 0)
+  fcast7 <-forecast::forecast(fit7,h=npred,level = 0)
   
+  #aquí creamos un dataframe con las distintas predicciones. 
   pred<-data.frame(fcast1$mean,fcast2$mean,fcast3$mean,fcast4$mean,fcast5$mean,fcast6$mean,fcast7$mean)
   
+  #aquí calculamos los residuos para cada uno de los modelos : i:índice de modelo, j: índice de muestra
+  # estamos guardando el Mean Absolute Error
   for(j in 1:length(pred)){
     errordf[i,j]<-mean(abs(pred[,j]-test))
   }
