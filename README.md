@@ -202,3 +202,14 @@ El mejor modelo considerado hasta ahora (ya sea el modelo actual o una de estas 
 
 * Se repite el paso 2 (c) hasta que no se pueda encontrar un AIC inferior.
 
+### Contraste de hipótesis
+
+Estacionariedad de Dickey-Fuller.
+
+* H0: Los residuales del modelo ARIMA son estacionarios
+* Ha: Los residuales del modelo ARIMA no son estacionarios
+
+Prueba de independencia de los residuales (Box-Pierce test).
+
+* H0: Los residuales del modelo ARIMA son independientes.
+* Ha: Los residuales del modelo ARIMA no son independientes. 
