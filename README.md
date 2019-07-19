@@ -91,6 +91,9 @@ Un proceso estocástico (estocástico=depende del tiempo y tiene componente alea
 
 𝔼[〖(𝑋〗_𝑡−𝜇)(𝑋_(𝑡+𝑘)−𝜇)] (covarianza) no depende del tiempo
 
+Aquí vemos un ejemplo en el que la covarianza depende del tiempo y por tanto NO es estacionaria
+![acf_no_estacionaria](media/acf_no_estacionaria.PNG)
+
 
 ### No estacionarias
 
