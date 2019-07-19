@@ -23,24 +23,28 @@ data_price$V1<-NULL
 
 y<-ts(data_price$price_spain,frequency = 24) #Serie hist?rica de precios
 summary(y)
+# pintamos los datos 
 plot(y)
+# lo pintamos descomponiendo entre trend, seasonal y random.  
 plot(decompose(y))
 
 par(mfrow=c(2,1))
 
 hist(y,probability = T)
 lines(density(y),col="red",lwd=2)
+#vemos que la distribución es bimodal, de las más difíciles de tratar, porque nos
+# gustaría que fueera una normal. 
 qqnorm(y)
 qqline(y)
 
 #Explorando acf
 acf(y)
-
+#su función de autocorrelación no debería depender del tiempo y si lo hace. Entonces no es estacionaria. 
 
 #Originalmente la serie no es estacionaria, procedemos a realizar
 #ciertas transformaciones
 acf(log(y))
-
+#tampoco es esdtacionaria haciendo esa transformación. 
 
 par(mfrow=c(3,1))
 for(i in 1:3){
