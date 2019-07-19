@@ -23,9 +23,11 @@ fit5 <- tbats(y) # cogemos el tbats que anteriormente fue el que más nos gustó
 fcast5 <- forecast::forecast(fit5, h=npred) # esto tardará
 
 #Las siguientes lineas permiten "acomodar" los datos para ser ploteados
-#Crea un dataframe para el forecast
+#Crea un dataframe para el forecast, quedándome sólo con Point Forecast, no me interesan los intervalos de confianza.
+#aquí meto las 24 prediciciones
 df<-data.frame(price_spain=as.data.frame(fcast5)[,"Point Forecast"],
                datetime=as.POSIXct(paste0(Sys.Date()," ",01:24,":00:00"),format="%Y-%m-%d %H:%M:%S",tz="UTC"))
+# aquí meto  antes los datos anteriores reales. 
 df<-rbind(data_price[,c("price_spain","datetime")],df)
 
 #Datos del plot principal
@@ -36,7 +38,7 @@ x<-as.POSIXct(data_price$datetime,format="%Y-%m-%d %H:%M:%S",tz="UTC")
 y<-data_price$price_spain
 
 #Datos del plot adicional (prevision)
-x2<-as.POSIXct(paste0(Sys.Date()," ",01:24,":00:00"),format="%Y-%m-%d %H:%M:%S",tz="UTC")
+x2<-as.POSIXct(paste0(Sys.Date()-1," ",01:24,":00:00"),format="%Y-%m-%d %H:%M:%S",tz="UTC")
 y2<-as.data.frame(fcast5)[,"Point Forecast"]
 
 #Opciones del plot
@@ -52,12 +54,17 @@ forecastplot<-plot_ly(x = x, y = y, mode = 'lines',type = 'scatter',name="Hist\u
          xaxis = list(title="Datetime",titlefont = f),
          yaxis = list(title="Eur/MWh",titlefont = f))
 
+forecastplot
+
+#salen demasiados datos, vamos a mostrar menos
+
 forecastplot<-plot_ly(x = x[(length(x)-120):length(x)], y = y[(length(x)-120):length(x)], mode = 'lines',type = 'scatter',name="Hist\u00f3rico") %>%
   add_trace(x=x2, y = y2, name = "Previsi\u00f3n") %>%
   plotly::layout(title = paste("Previsi\u00f3n del mercado diario de energ\u00eda en el sistema espa\u00f1ol  para el d\u00eda",Sys.Date()),
          xaxis = list(title="Datetime",titlefont = f),
          yaxis = list(title="Eur/MWh",titlefont = f))
 
+forecastplot
 save(forecastplot,file=paste0(getwd(),"./data_out/forecastplot.Rdata"))
 
 #Generamos una tabla con los resultados de la previsi?n
