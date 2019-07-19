@@ -13,7 +13,7 @@ El Operador del Mercado Ibérico Española (OMIE) gestiona de manera integrada l
 # Asignaciones
 
 La tarea consiste en:
-1.	Obtener información pública sobre el resultado del cierre de la casación del mercado diario. Lo vemos en http://www.omie.es/inicio. 
+1.	Obtener información pública sobre el resultado del cierre de la casación del mercado diario. Lo vemos en http://www.omie.es/inicio. Haremos **scraping** sobre esa página. 
 2.	Realizar un modelo de previsión que permitan estimar el precio de la energía del día siguiente, a partir de la información histórica. 
 3.	Realizar una visualización de los resultados.
 
