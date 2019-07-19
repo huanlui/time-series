@@ -213,3 +213,11 @@ Prueba de independencia de los residuales (Box-Pierce test).
 
 * H0: Los residuales del modelo ARIMA son independientes.
 * Ha: Los residuales del modelo ARIMA no son independientes. 
+
+## Exponential smoothing
+
+En el modelo autoregresivo, todas las observaciones tienen el mismo peso. Pero puede ser más sensato agregar un mayor peso a las observaciones más recientes que a las observaciones más viejas. Este es exactamente el concepto detrás del simple exponencial smoothing.
+
+𝑋_(𝑡+1)=𝛼𝑥_𝑡  +𝛼(1−𝛼) 𝑥_(𝑡−1 )+𝛼(1−𝛼)^2  𝑥_(𝑡−2)+⋯
+
+Donde 0≤𝛼≤1 es el parámetro de suavizado.
