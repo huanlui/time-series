@@ -73,6 +73,7 @@ Donde
 * 𝐸_𝑡 es la **componente estacional**.
 * 𝐼_𝑡   es la **componente aleatoria**. 
 
+![componentes](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2017/01/Multiplicative-Decomposition-of-Airline-Passenger-Dataset.png)
 
 ## Clasificación descriptiva de las series temporales 
 
@@ -221,3 +222,9 @@ En el modelo autoregresivo, todas las observaciones tienen el mismo peso. Pero p
 𝑋_(𝑡+1)=𝛼𝑥_𝑡  +𝛼(1−𝛼) 𝑥_(𝑡−1 )+𝛼(1−𝛼)^2  𝑥_(𝑡−2)+⋯
 
 Donde 0≤𝛼≤1 es el parámetro de suavizado.
+
+## Holt-Winters
+
+Lo que hace es aplicar el exponential smoothing de las tres componentes T, E e I. 
+
+El método de Holt-Winters comprende la ecuación de pronóstico y tres ecuaciones de suavizado (similar a exponencial smoothing): una para el nivel, otra para la tendencia y otra para el componente estacional, con los correspondientes parámetros de suavizado. Usamos 𝑚 para denotar la frecuencia de la estacionalidad, es decir, el número de estaciones en un año. Por ejemplo, para datos trimestrales 𝑚=4, para datos mensuales 𝑚=12.
