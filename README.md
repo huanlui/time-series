@@ -5,6 +5,11 @@
 * https://es.wikipedia.org/wiki/Autocorrelaci%C3%B3n
 * https://es.wikipedia.org/wiki/Proceso_estoc%C3%A1stico
 
+* Pvalor < 0.05 => rechazo hipótesis nula (Ho)- 
+* Pvalor > 0.05 => acepto Ho. 
+
+Esto es porque todas las hipótesis se hacen con una confianza de 95% (el 0.05=1-NC es el nivel de significancia, alpha). 
+
 ## Introducción
 
 Series de tiempo o temporales en español. Ya no son de Machine Learning. No hay un aprendizaje. Sólo son estadísticas y fórmulas que permiten predecir a un plazo determinado. 
