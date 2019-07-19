@@ -249,3 +249,13 @@ Mejora del anterior
 * Para cada método existen dos modelos: uno con errores aditivos y otro con errores multiplicativos.
 * Consultar https://otexts.com/fpp2/ets.html para los detalles matemáticos.
 
+## Exponential Smoothing State Space Model With Box-Cox Transformation, ARMA Errors, Trend And Seasonal Components (TBATS)
+
+El más pepino de todos. 
+
+Los modelos anteriores, suelen ser válidos para series estacionales relativamente simples, como los datos trimestrales y mensuales. Sin embargo, las series de tiempo de mayor frecuencia a menudo exhiben patrones estacionales más complicados. Por ejemplo, los datos diarios pueden tener un patrón semanal así como un patrón anual. Los datos por hora generalmente tienen tres tipos de estacionalidad: un patrón diario, un patrón semanal y un patrón anual. Incluso los datos semanales pueden ser difíciles de pronosticar, ya que generalmente tienen un patrón anual con un período estacional de 365.25/7≈52.179 en promedio.
+
+Usa **transformaciones de Fourier**
+
+![tbats](https://i.stack.imgur.com/fUvBk.png)
+
