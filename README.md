@@ -2,8 +2,8 @@
 
 ## Conceptos previos
 
-https://es.wikipedia.org/wiki/Autocorrelaci%C3%B3n
-https://es.wikipedia.org/wiki/Proceso_estoc%C3%A1stico
+* https://es.wikipedia.org/wiki/Autocorrelaci%C3%B3n
+* https://es.wikipedia.org/wiki/Proceso_estoc%C3%A1stico
 
 ## Introducción
 
@@ -153,3 +153,27 @@ Por consiguiente, se debe diferenciar una serie de tiempo d veces para hacerla e
 
 𝜃_1 𝜀_(𝑡−1)^𝑑+⋯+𝜃_𝑞 𝜀_(𝑡−𝑞)^𝑑+𝜀_𝑡
 
+
+La **construcción** de los modelos se lleva de manera iterativa mediante un proceso en el que se puede distinguir cuatro etapas: 
+
+![media](/media/arima.png)
+
+### Identificación. 
+
+Utilizando los datos ordenados cronológicamente se intentara sugerir un modelo que merezca la pena ser investigada. El objetivo es determinar los valores que sean apropiados para reproducir la serie de tiempo. En esta etapa es posible identificar más de un modelo candidato que pueda describir la serie. 
+
+### Estimación.
+
+Considerando el modelo apropiado para la serie de tiempo se realiza inferencia sobre los parámetros.
+
+### Validación.
+
+Se realizan contraste de diagnostico para validar si el modelo seleccionado se ajusta a los datos, si no es así, escoger el próximo modelo candidato y repetir los pasos anteriores.
+
+Se usa el AIC para ver si el modelo de serie es mejor. A menor AIC, mejor modelo de serie. 
+
+Los residuos son la diferencia entre valor estimado y valor real. Los residuos deberían ser normales, es decir, caer en una banda. Un modelo NO ES BUENO si los residuos siguen un patrón. 
+
+### Predicción.
+
+Una vez seleccionado el mejor modelo candidato se pueden hacer pronósticos en términos probabilísticos de los valores futuros. 
