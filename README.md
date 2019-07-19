@@ -56,6 +56,9 @@ Esta componente **no responde a ningún patrón de comportamiento**, sino que es
 Por tanto 
 > 𝑋_𝑡=𝑇_𝑡+𝐸_𝑡+𝐼_𝑡
 
-Donde 𝑇_𝑡 es la tendencia, 𝐸_𝑡 es la componente estacional e 𝐼_𝑡   es la componente aleatoria. 
+Donde 
+* 𝑇_𝑡 es la **tendencia**.
+* 𝐸_𝑡 es la **componente estacional**.
+* 𝐼_𝑡   es la **componente aleatoria**. 
 
 
