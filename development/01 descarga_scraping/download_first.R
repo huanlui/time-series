@@ -10,15 +10,15 @@ rm(list=ls())
 
 
 from<-Sys.Date()-366 #Selecciono la fecha de inicio, un anyo menos a la fecha actual en este caso
-to<-Sys.Date() #Fecha del dia de hoy
+to<-Sys.Date()-1  #Fecha del dia de hoy
 
-
+mydat<-NULL
 
 for(i in 1:(to-from)){
   print(i)
   date<-from+(i-1)
  
-  source(paste0(getwd(),"./development/descarga_scraping/download_ftp_omie.R"))
+  source(paste0(getwd(),"./development/01 descarga_scraping/download_ftp_omie.R")) # ejecutame este fichero. 
   
   #El siguiente if, actualiza los datos
   if(i==1){
@@ -32,7 +32,7 @@ mydat$V7<-NULL
 mydat$V5<-NULL #precio de portugal
 
 #Arreglamos los datos y anadimos una columna con el datetime del precio
-names(mydat)<-c("year","month","day","hour","price_spain")
+names(mydat)<-c("year","month","day","hour","price_spain") # ponemos nombres de columnas bonitas. 
 mydat$datetime<-as.POSIXct(paste0(mydat[,1],"-",mydat[,2],"-",mydat[,3]," ",mydat[,4],":00:00"),format="%Y-%m-%d %H:%M:%S",tz="UTC")
 
 mydat<-mydat[which(!is.na(mydat$datetime)),]

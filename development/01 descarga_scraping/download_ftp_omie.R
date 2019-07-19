@@ -3,7 +3,7 @@
 ##### ESTE ES SOLO UN PROC QUE DESCARGA LOS FTP DE OMIE DADA UNA FECHA #####
 ############################################################################
 
-
+#date<-Sys.Date(). Eso para probar, porque date me va a llegar desde fuera. 
 
 date<-gsub("-","",date)
 res<-0
@@ -11,6 +11,8 @@ class(res)<-"try-error"
 idx<-1
 
 #Hemos notado que en algunos casos, la "extensi?n" de la URL varia en el n?mero final (.1, .2, .3, etc)
+# (ver http://www.omie.es/aplicaciones/datosftp/datosftp.jsp?path=/marginalpdbc/)
+# dentro de esa hay distintos enlaces, del estilo: http://www.omie.es/datosPub/marginalpdbc/marginalpdbc_20010706.1
 #Creemos que es debido a versiones de los precios que actualiza la OMIE y para diferenciarlos coloca .1 (version 1 por ejemplo)
 #Por tanto, el siguiente bucle no termina hasta que la URL no devuelva un valor que no sea "try-error"
 
