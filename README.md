@@ -121,7 +121,7 @@ Los modelos autoregresivos se basan en la idea de que el valor actual de la seri
 
 Donde 𝜀_𝑡 es un ruido blanco.
 
-Ejemplo:
+Ejemplo de modelo autoregresivo de orden 2 (obviando ruido blanco):
 
 X_(t+1) = 𝜙_1 𝑋_(t) + 𝜙_2 𝑋_(t-1)
 En este caso, mi coeficiente  *t+1* es 𝜙_1 vceces mi coeficiente *t* + 𝜙_2 veces mi coeficiente *t - 1*
