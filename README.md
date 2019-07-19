@@ -115,6 +115,8 @@ Ver (https://towardsdatascience.com/time-series-nested-cross-validation-76adba62
 
 ## Modelo Autoregresivo AR(p)
 
+Este modelo es muy bonito en teoría, pero no suele pasar. 
+
 Los modelos autoregresivos se basan en la idea de que el valor actual de la serie 𝑋_𝑡, puede explicarse en función de valores pasados 𝑋_(𝑡−1),…,𝑋_(𝑡−𝑝), donde 𝑝 determina el número de retrasos necesarios para pronosticar un valor actual. El modelo autoregresivo de orden 𝑝 está dado por:
 
 𝑋_𝑡=𝜙_0+𝜙_1 𝑋_(𝑡−1)+⋯+𝜙_𝑝 𝑋_(𝑡−𝑝)+𝜀_𝑡
@@ -127,4 +129,21 @@ X_(t+1) = 𝜙_1 𝑋_(t) + 𝜙_2 𝑋_(t-1)
 
 En este caso mi coeficiente  *t+1* es 𝜙_1 vceces mi coeficiente *t* + 𝜙_2 veces mi coeficiente *t - 1*
 
+## Modelo autoregresivo de media móvil ARMA(p,q)
+
+Sólo aplicable paraa series de tiempo estacionarias (con media y varianza constante y covarianza no dependiente del tiempo). Es porque si me media no es constante, cuando yo haga depender mi nueva serie de valores anteriores, el modelo no va a salir bien. 
+
+Es muy probable que una serie de tiempo 𝑋_𝑡, tenga características de AR y MA a la vez y, por consiguiente, sea ARMA. Por tanto, 𝑋_𝑡  sigue un proceso, en este proceso habrá términos autoregresivos y términos de media móvil.
+
+𝑋_𝑡=〖𝜙_0+𝜙_1 𝑋_(𝑡−1)+⋯+𝜙_𝑝 𝑋_(𝑡−𝑝)+𝜃〗_0+
+𝜃_1 𝜀_(𝑡−1)+⋯+𝜃_𝑞 𝜀_(𝑡−𝑞)+𝜀_𝑡
+
+Donde 𝜀_𝑡 es un ruido blanco.
+
+
+## Modelo autoregresivo integrado de media móvil ARIMA(p,d,q)
+
+También funciona para no estacionarias. 
+
+Los modelos de series de tiempo analizados hasta ahora se basan en el supuesto de estacionariedad, esto es, la media y la varianza para una serie de tiempo son constantes en el tiempo y la covarianza es invariante en el tiempo. Pero la mayoría de las series de tiempo no son estacionarias, porque pueden ir cambiando de nivel en el tiempo o sencillamente la varianza no es constante en el tiempo, a este tipo de proceso se les considera *procesos integrados*.
 
