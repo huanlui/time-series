@@ -51,5 +51,5 @@ Muchas series temporales presentan **cierta periodicidad** o dicho de otro modo,
 
 ### Componente aleatoria
 
-Esta componente no responde a ningún **patrón de comportamiento**, sino que es el resultado de factores fortuitos o aleatorios que inciden de forma aislada en una serie de tiempo
+Esta componente **no responde a ningún patrón de comportamiento**, sino que es el resultado de factores fortuitos o aleatorios que inciden de forma aislada en una serie de tiempo
 
