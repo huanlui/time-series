@@ -260,7 +260,7 @@ El más pepino de todos.
 
 Los modelos anteriores, suelen ser válidos para series estacionales relativamente simples, como los datos trimestrales y mensuales. Sin embargo, las series de tiempo de mayor frecuencia a menudo exhiben patrones estacionales más complicados. Por ejemplo, los datos diarios pueden tener un patrón semanal así como un patrón anual. Los datos por hora generalmente tienen tres tipos de estacionalidad: un patrón diario, un patrón semanal y un patrón anual. Incluso los datos semanales pueden ser difíciles de pronosticar, ya que generalmente tienen un patrón anual con un período estacional de 365.25/7≈52.179 en promedio.
 
-* Utiliza una combinación de términos de Fourier, exponencial smoothing, transformación de Box-Cox y ARIMA. 
+* Utiliza una combinación de términos de Fourier, exponencial smoothing, [transformación de Box-Cox](https://es.wikipedia.org/wiki/Transformaci%C3%B3n_Box-Cox) y ARIMA. 
 * Un inconveniente de los modelos TBATS, sin embargo, es que pueden ser lentos de estimar, especialmente con series de tiempo largas. 
 
 ![tbats](https://i.stack.imgur.com/fUvBk.png)
