@@ -180,6 +180,8 @@ Una vez seleccionado el mejor modelo candidato se pueden hacer pronósticos en t
 
 ### Existe en R una función auto-arima que te lo hace
 
+Lo que hay detrás de esta función es esto. Lo explica porque en un TFM lo preguntó y el tío le dijo que usaba el auto arima sin saber lo que hacía dentro. 
+
 * Se ajustan cuatro modelos iniciales:
 𝐴𝑅𝐼𝑀𝐴(0,𝑑,0),
 𝐴𝑅𝐼𝑀𝐴(2,𝑑,2),
