@@ -1,5 +1,12 @@
 # Time series
 
+## Conceptos previos
+
+https://es.wikipedia.org/wiki/Autocorrelaci%C3%B3n
+https://es.wikipedia.org/wiki/Proceso_estoc%C3%A1stico
+
+## Introducción
+
 Series de tiempo o temporales en español. Ya no son de Machine Learning. No hay un aprendizaje. Sólo son estadísticas y fórmulas que permiten predecir a un plazo determinado. 
 
 ![serie-temporal](https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2018/02/train_test-768x438.png)
@@ -95,11 +102,28 @@ La serie de la derecha no es estacionaria, su varianza se incrementa.
 
 La cross validation la usábamos 
 
-Cogemos una pequeña parte de la serie para entrenar y otra pequeña para testear. 
+Cogemos una pequeña parte de la serie para entrenar y otra pequeña (contigua, claro) para testear. Pequeña porque las series temporales aciertan sobre todo en tiempos pequeños, no tiene sentido probar con test muy largo).
 
 Luego voy aumentando el training, dejando la longitud de test igual. 
 
 ![image](https://miro.medium.com/max/736/1*5vky1z29e1iO6iOvCTBJxg.png)
 
 Ver (https://towardsdatascience.com/time-series-nested-cross-validation-76adba623eb9)
+
+# Modelos
+
+
+## Modelo Autoregresivo AR(p)
+
+Los modelos autoregresivos se basan en la idea de que el valor actual de la serie 𝑋_𝑡, puede explicarse en función de valores pasados 𝑋_(𝑡−1),…,𝑋_(𝑡−𝑝), donde 𝑝 determina el número de retrasos necesarios para pronosticar un valor actual. El modelo autoregresivo de orden 𝑝 está dado por:
+
+𝑋_𝑡=𝜙_0+𝜙_1 𝑋_(𝑡−1)+⋯+𝜙_𝑝 𝑋_(𝑡−𝑝)+𝜀_𝑡
+
+Donde 𝜀_𝑡 es un ruido blanco.
+
+Ejemplo:
+
+X_(t+1) = 𝜙_1 𝑋_(t) + 𝜙_2 𝑋_(t-1)
+En este caso, mi coeficiente  *t+1* es 𝜙_1 vceces mi coeficiente *t* + 𝜙_2 veces mi coeficiente *t - 1*
+
 
