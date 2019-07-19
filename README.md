@@ -90,3 +90,10 @@ La serie de la izquierda tiene una media constante, en cambio la figura de la de
 La serie de la derecha no es estacionaria, su varianza se incrementa.
 
 ![Autocovarianza](https://estrategiastrading.com/wp-content/uploads/2016/12/autocovarianza.png)
+
+## Cross validation en series de tiempo
+
+![image](https://miro.medium.com/max/736/1*5vky1z29e1iO6iOvCTBJxg.png)
+
+Ver (https://towardsdatascience.com/time-series-nested-cross-validation-76adba623eb9)
+
