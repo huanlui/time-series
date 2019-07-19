@@ -70,6 +70,13 @@ Las series temporales se pueden clasificar en:
 
 Una serie es estacionaria cuando es estable a lo largo del tiempo, es decir, cuando la media y varianza son constantes en el tiempo. Esto se refleja gráficamente en que los valores de la serie tienden a oscilar alrededor de una media constante y la variabilidad con respecto a esa media también permanece constante en el tiempo.
 
+Un proceso estocástico se dice que es estacionario si
+
+𝔼[𝑋_𝑡 ]=𝔼[𝑋_(𝑡+𝑘) ]=𝜇. Media constante.
+𝑉𝑎𝑟[𝑋_𝑡 ]=𝑉𝑎𝑟[𝑋_(𝑡+𝑘) ]=𝜎^2. Varianza constante
+𝔼[〖(𝑋〗_𝑡−𝜇)(𝑋_(𝑡+𝑘)−𝜇)] (covarianza) no depende del tiempo
+
+
 ### No estacionarias
 
 Son series en las cuales la tendencia y/o variabilidad cambian en el tiempo. Los cambios en la media determinan una tendencia a crecer o decrecer a largo plazo, por lo que la serie no oscila alrededor de un valor constante.
