@@ -18,6 +18,6 @@ La tarea consiste en:
 3. Usar el modelo para estimar. Ver [este fichero](https://github.com/huanlui/time-series/blob/master/development/03%20forecasting/forecast_energy_spa.R)
 4. Realizar una visualización de los resultados. Ver [este fichero](https://github.com/huanlui/time-series/blob/master/development/04%20visualization/plotly.R)
 
-Este es el plot que sale: ![error](media\plot.PNG)
+Este es el plot que sale: ![error](media/plot.PNG)
 
 
