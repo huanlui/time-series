@@ -22,17 +22,34 @@ Son variables **discretas**.
 ## Ejemplos de aplicación
 
 ### Economía y Marketing
-Proyecciones del empleo y desempleo.
-Evolución del índice de precios de la leche.
-Beneficios netos mensuales de cierta entidad bancaria.
-Índices del precio del petróleo.
+* Proyecciones del empleo y desempleo.
+* Evolución del índice de precios de la leche.
+* Beneficios netos mensuales de cierta entidad bancaria.
+* Índices del precio del petróleo.
 
 ###  Demografía
-Número de habitantes por año.
-Tasa de mortalidad infantil por año.
+* Número de habitantes por año.
+* Tasa de mortalidad infantil por año.
 
 ### Medioambiente
-Evolución horaria de niveles de óxido de azufre y de niveles de óxido de nitrógeno en una ciudad durante una serie de años.
-Lluvia recogida diariamente en una localidad.
-Temperatura media mensual.
-Medición diaria del contenido en residuos tóxicos en un río. 
+* Evolución horaria de niveles de óxido de azufre y de niveles de óxido de nitrógeno en una ciudad durante una serie de años.
+* Lluvia recogida diariamente en una localidad.
+* Temperatura media mensual.
+* Medición diaria del contenido en residuos tóxicos en un río. 
+
+## Componentes de una serie temporal
+
+El análisis clásico de las series temporales se basa en la suposición de que los valores que toma la variable de observación es la consecuencia de tres componentes, cuya actuación conjunta da como resultado los valores medidos, estos componentes son:
+
+### Componente tendencia
+
+Se puede definir como un cambio a **largo plazo** que se produce en la relación al nivel medio, o el cambio a largo plazo de la media. La tendencia se identifica con un movimiento suave de la serie a largo plazo.
+
+### Componente estacional
+
+Muchas series temporales presentan **cierta periodicidad** o dicho de otro modo, variación de cierto período (semestral, mensual, etc.). Estos efectos son fáciles de entender y se pueden medir explícitamente o incluso se pueden eliminar de la serie de datos, a este proceso se le llama desestacionalización de la serie.
+
+### Componente aleatoria
+
+Esta componente no responde a ningún patrón de comportamiento, sino que es el resultado de factores fortuitos o aleatorios que inciden de forma aislada en una serie de tiempo
+
