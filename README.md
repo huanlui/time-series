@@ -73,7 +73,9 @@ Una serie es estacionaria cuando es estable a lo largo del tiempo, es decir, cua
 Un proceso estocástico se dice que es estacionario si
 
 𝔼[𝑋_𝑡 ]=𝔼[𝑋_(𝑡+𝑘) ]=𝜇. Media constante.
+
 𝑉𝑎𝑟[𝑋_𝑡 ]=𝑉𝑎𝑟[𝑋_(𝑡+𝑘) ]=𝜎^2. Varianza constante
+
 𝔼[〖(𝑋〗_𝑡−𝜇)(𝑋_(𝑡+𝑘)−𝜇)] (covarianza) no depende del tiempo
 
 
