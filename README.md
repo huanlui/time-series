@@ -74,4 +74,10 @@ Una serie es estacionaria cuando es estable a lo largo del tiempo, es decir, cua
 
 Son series en las cuales la tendencia y/o variabilidad cambian en el tiempo. Los cambios en la media determinan una tendencia a crecer o decrecer a largo plazo, por lo que la serie no oscila alrededor de un valor constante.
 
-![estacionaria-vs-no_estacionaria](https://estrategiastrading.com/wp-content/uploads/2016/12/media_estacionaria.png)
+![media_estacionaria](https://estrategiastrading.com/wp-content/uploads/2016/12/media_estacionaria.png)
+La serie de la izquierda tiene una media constante, en cambio la figura de la derecha muestra tendencia, y su media se incrementa con el paso del tiempo.
+
+![homoscedasticidad](https://estrategiastrading.com/wp-content/uploads/2016/12/homoscedasticidad.png)
+La serie de la derecha no es estacionaria, su varianza se incrementa.
+
+![Autocovarianza](https://estrategiastrading.com/wp-content/uploads/2016/12/autocovarianza.png)
