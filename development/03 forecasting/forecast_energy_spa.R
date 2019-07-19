@@ -19,10 +19,11 @@ data_price$V1<-NULL
 y<-ts(data_price$price_spain,frequency = 24) #Serie historica de precios
 
 npred<-24
-fit5 <- tbats(y)
-fcast5 <- forecast::forecast(fit5, h=npred)
+fit5 <- tbats(y) # cogemos el tbats que anteriormente fue el que más nos gustó.
+fcast5 <- forecast::forecast(fit5, h=npred) # esto tardará
 
 #Las siguientes lineas permiten "acomodar" los datos para ser ploteados
+#Crea un dataframe para el forecast
 df<-data.frame(price_spain=as.data.frame(fcast5)[,"Point Forecast"],
                datetime=as.POSIXct(paste0(Sys.Date()," ",01:24,":00:00"),format="%Y-%m-%d %H:%M:%S",tz="UTC"))
 df<-rbind(data_price[,c("price_spain","datetime")],df)
