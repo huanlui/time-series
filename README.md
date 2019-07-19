@@ -93,6 +93,12 @@ La serie de la derecha no es estacionaria, su varianza se incrementa.
 
 ## Cross validation en series de tiempo
 
+La cross validation la usábamos 
+
+Cogemos una pequeña parte de la serie para entrenar y otra pequeña para testear. 
+
+Luego voy aumentando el training, dejando la longitud de test igual. 
+
 ![image](https://miro.medium.com/max/736/1*5vky1z29e1iO6iOvCTBJxg.png)
 
 Ver (https://towardsdatascience.com/time-series-nested-cross-validation-76adba623eb9)
