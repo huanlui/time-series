@@ -23,24 +23,28 @@ data_price$V1<-NULL
 
 y<-ts(data_price$price_spain,frequency = 24) #Serie hist?rica de precios
 summary(y)
+# pintamos los datos 
 plot(y)
+# lo pintamos descomponiendo entre trend, seasonal y random.  
 plot(decompose(y))
 
 par(mfrow=c(2,1))
 
 hist(y,probability = T)
 lines(density(y),col="red",lwd=2)
+#vemos que la distribución es bimodal, de las más difíciles de tratar, porque nos
+# gustaría que fueera una normal. 
 qqnorm(y)
 qqline(y)
 
 #Explorando acf
 acf(y)
-
+#su función de autocorrelación no debería depender del tiempo y si lo hace. Entonces no es estacionaria. 
 
 #Originalmente la serie no es estacionaria, procedemos a realizar
 #ciertas transformaciones
 acf(log(y))
-
+#tampoco es esdtacionaria haciendo esa transformación. 
 
 # Arima intentaba hacer diferencias y aplicar un ARMA. 
 # Vemos que para i = 2 tiene mejor pinta. 
@@ -119,7 +123,7 @@ print(paste0(Sys.time(),": Fin"))
 
 
 #Debido al coste que genera la CV, guardamos el resultado por si en alg?n caso por error lo borramos
-save(errordf,file= paste0(getwd(),"./data_out/errordf.Rdata"))
+#save(errordf,file= paste0(getwd(),"./data_out/errordf.Rdata"))
 
 
 
@@ -154,15 +158,16 @@ legend=c("Linear regression","ETS no Box.Cox",
 
 
 #Barplot para visualizar media de MAE
-
+#Me hace la media de las 20 iteraciones de la cross validation. 
 m<-colMeans(errordf)
 names(m)<-c("Linear regression","ETS no Box.Cox",
             "HoltWinters Add","HoltWinters Mult","TBATS","ETS Box.Cox","ARIMA")
 
 barplot(m,ylab = "Mean of MAE", xlab = "Models",col="blue",
         main="Media de MAE para cada modelo utilizado en CV",ylim=c(0,5))
+#vemos que el que tiene menos media de MAE es el TBATS. 
 
-
+#guardamos este valor de medias de errores. 
 save(m,file=paste0(getwd(),"./data_out/matrixbarplot.Rdata"))
 
 #El modelo con la media m?s baja en MAE es TBATS
