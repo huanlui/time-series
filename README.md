@@ -94,6 +94,8 @@ Un proceso estocástico (estocástico=depende del tiempo y tiene componente alea
 Aquí vemos un ejemplo en el que la covarianza depende del tiempo y por tanto NO es estacionaria
 ![acf_no_estacionaria](media/acf_no_estacionaria.PNG)
 
+**OJO**: Esto es la función de autocorrelación, no la serie.
+
 
 ### No estacionarias
 
